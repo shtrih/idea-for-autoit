@@ -104,7 +104,8 @@ Func configCreate($sFilePath)
     ConsoleWrite('Trying to write config file ' & $sFilePath & @CRLF)
 
     $iResult = IniWrite($sFilePath, 'General', 'autoit_install_path', $eg_sAutoItPath)
-    IniWrite($sFilePath, 'General', 'hotkey', $eg_sHotKey & ' ; e.g. {f1} or ^q. See also: https://www.autoitscript.com/autoit3/docs/functions/HotKeySet.htm')
+    IniWrite($sFilePath, 'General', 'hotkey_comment', '; e.g. {f1} or ^q. See also: https://www.autoitscript.com/autoit3/docs/functions/HotKeySet.htm')
+    IniWrite($sFilePath, 'General', 'hotkey', $eg_sHotKey)
     IniWrite($sFilePath, 'General', 'ide_name', $eg_sIDEName)
 
     If Not $iResult Then
